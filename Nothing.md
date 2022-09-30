@@ -53,6 +53,12 @@ NOTE; You'll want to prep rooting with Magisk before actually performing the unl
 
 # Over-the-air (OTA) UPDATE
 
+> Delta updates calculate partition checksums! Don't force anything regarding updates bruh, or you'll brick and require EDL
+
+- OTA update is probably a DELTA update, if it is you need to find the boot image of the NothingOS version that's running
+    - Check the XDA thread for OTA links
+        - https://forum.xda-developers.com/t/phone-1-rom-ota-nothing-os-repo-of-nothing-os-update-17-09-2022.4464039/
+    - Or backup boot image before patching with magisk
 - Restore original boot.img
     - `adb reboot bootloader`
     - `fastboot flash boot <boot_original.img>`
