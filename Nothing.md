@@ -1,5 +1,7 @@
 ADB NOTE; `adb.exe devices` lists all connected devices, make sure to allow the computer (on the phone itself) otherwise the device state will say "unauthorized"!
 
+FASTBOOT NOTE; Fastboot mode can be accessed without ADB by booting with [POWER] + [VOLUME DOWN]
+
 # Prep Unlock bootloader
 
 Settings > About phone > Software info > Tap build number
@@ -49,6 +51,19 @@ NOTE; You'll want to prep rooting with Magisk before actually performing the unl
 - `adb reboot bootloader`
 - `fastboot flashing lock`
 
+# Over-the-air (OTA) UPDATE
+
+- Restore original boot.img
+    - `adb reboot bootloader`
+    - `fastboot flash boot <boot_original.img>`
+    - `fastboot reboot`
+- Install OTA through Google Play Update
+- Boot Magisk patched boot.img
+    - `adb reboot bootloader`
+    - `fastboot boot <magisk_patched<>.img>`
+- Open up Magisk app and perform direct install on top of the OTA original bootloader
+    - Magisk > Install > Direct Install > Let's Go
+
 # ROOT MODULES
 
 # BootloopSaver
@@ -56,6 +71,11 @@ NOTE; You'll want to prep rooting with Magisk before actually performing the unl
 - https://github.com/Magisk-Modules-Alt-Repo/HuskyDG_BootloopSaver/tree/v1.8.1
 
 # Safety net fix
+
+> I haven't gotten bank apps to work because of "Play Store Attestation" which is a hardware backed
+> verification service that supercedes "Safety Net API".  
+> This thing basically means everyone unlocked/rooted/using a custom ROM is fucked (at the moment, very probably forever)
+> if device attestation is required.
 
 Hide existence of magisk and other device unlocking tools/features from apps
 
@@ -65,6 +85,9 @@ Hide existence of magisk and other device unlocking tools/features from apps
 - Zygote
 
 # Advanced Charging controller
+
+> Keep the configuration of Acc simple. Acca doesn't work properly, and the native acc config utilities do not work when
+> the device is in battery saver.
 
 Control the mechanism that handles charging the phone itself
 
