@@ -89,10 +89,24 @@ NOTE; You'll want to prep rooting with Magisk before actually performing the unl
 
 Hide existence of magisk and other device unlocking tools/features from apps
 
-- https://github.com/kdrag0n/safetynet-fix/tree/v2.3.1
+- https://github.com/Displax/safetynet-fix/releases/tag/v2.3.1-MOD_2.0
 
 ### Requires
 - Zygote
+
+### Configuration
+
+- Install the Safetynet fix module
+- Add Banking apps to DenyList
+    - I added Google play services to denylist too, but it automatically deselected after reboot
+- Enforce DenyList
+- Reboot
+- Profit
+
+### Note
+
+You don't need complex hooking (LSPosed lib injection + Hide my Applist function overrides) for Payconiq!
+Banking apps don't care about developer mode! You might have to toggle on/off USB debugging (ADB)
 
 # Advanced Charging controller
 
@@ -104,15 +118,10 @@ Control the mechanism that handles charging the phone itself
 - https://github.com/VR-25/acc/tree/v2022.7.30-dev
     - Do _not_ handle acc installations through the AccA app, because uninstall/reinstall doesn't properly happen 2 out of 3 times!
 
-Use the AccA app but remove the standard profiles (Cooldown/Charge till 90%/Default) to prevent overwriting our custom config!
+The AccA app is sheit, use it for monitoring and nothing else.
 - https://github.com/MatteCarra/AccA/tree/v1.0.35
     - The AccA app is a front-end for acc and the apk also holds the Magisk Module
     - Don't install acc through AccA, it doesn't always properly work
-    - AccA is super nice for simpel charging/discharging and current stats
-
-- https://github.com/VR-25/djs/tree/v2021.12.14
-    - Used for scheduling charge configs
-    - Also applies proper config on boot, so reboot if all else fails
 
 [OPTIONAL]
 - https://install.appcenter.ms/users/sven-knispel-g51w/apps/betterbatterystats-xda-edition/distribution_groups/testers
@@ -147,19 +156,20 @@ Terminal emulator. DON'T DOWNLOAD THE APP STORE VERSION
 
 # Dolby Atmos EQ
 
-- https://www.pling.com/p/1610004/
-    - DolbyAtmos-MagicRevision-MagiskModule-20220628022755zip
+Don't need a Dolby mod, could use the Wavelet app just fine.
+
+- Wavelet
+    - https://forum.xda-developers.com/t/increase-soundquality-of-the-nothing-phone-1-speakers-tenfold-non-root.4484165/
+- Dolby Atmos Magisk module
+    - https://gitlab.com/magisk-module/dolby-atmos-magic-revision-magisk-module
 
 # Systemless hosts
 
-Redirect system's hosts file to user-writable one, for ad-blocking purposes
-
-- https://github.com/gloeyisk/systemless-hosts/tree/v17.0
+Don't really need it since it doesn't work on most apps (like Youtube)
 
 # Call recorder
 
-- https://github.com/Magisk-Modules-Repo/callrecorder-skvalex/tree/v.42
-    - Install trial app of call recorder!
+Call recorder app is a payed option. Look out for in-built options..
 
 # Google camera
 

@@ -2,6 +2,8 @@ set -e
 
 ## acc notes ##
 
+# If the commands aren't found, prefix them with /dev/.vr25/acc/
+
 # Allow for a +- 5% charge deviation from the set parameters!
 
 # Prioritize battery idle mode influences automatic switch(-off) selection.
