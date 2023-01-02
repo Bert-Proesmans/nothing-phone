@@ -2,7 +2,8 @@ set -e
 
 ## acc notes ##
 
-# If the commands aren't found, prefix them with /dev/.vr25/acc/
+# If the commands aren't found, prefix them with /system/bin/
+# Default configuration file is found at /data/adb/vr25/acc-data/config.txt
 
 # Allow for a +- 5% charge deviation from the set parameters!
 
@@ -15,106 +16,32 @@ set -e
 
 # cli acc is used instead of acca because some commands act weirdly through acca!
 
-default_config () {
+default_acc_config () {
 
+# Start acc and reset the configuration
 acc --daemon
 acc --set --reset a
 
 acc --set batt_status_workaround=true off_mid=true reset_batt_stats_on_pause=true
 
-# Specific to Nothing Phone
-acc --set charging_switch="battery/charge_control_limit 0 battery/charge_control_limit_max --" force_off=true
-
-# Failsafe
+# Battery Failsafe
 acc --set max_temp=45 max_temp_pause=90 shutdown_temp=55 shutdown_capacity=5
+
+# Battery passthrough mode at 60
+acc --set pause_capacity=60 resume_capacity=55
+
+# Time based cooldown to ease battery charging
+# This is a good approach for new batteries, but switch over to limit _charge current_ on older batteries!
+acc --set cooldown_capacity=60 cooldown_charge=50 cooldown_pause=10 cooldown_temp=40
+
+# Specific to Nothing Phone
+# Settign the charging switch will trigger a daemon restart!
+acc --set charging_switch="battery/charge_control_limit 0 battery/charge_control_limit_max --" force_off=true
 
 }
 
 if type acc &> /dev/null; then
-
-default_config
-
-cat > /sdcard/Download/acca-configuration.json <<ACCACONF
-[
-    {
-        "profile": {
-            "uid": 1,
-            "profileName": "Fast",
-            "accConfig": {
-                "configCapacity": {
-                    "shutdown": 5,
-                    "resume": 75,
-                    "pause": 85
-                },
-                "configVoltage": {
-                    "max": 4200
-                },
-                "configTemperature": {
-                    "coolDownTemperature": 40,
-                    "maxTemperature": 45,
-                    "pause": 90
-                },
-                "configCoolDown": {
-                    "atPercent": 60,
-                    "charge": 50,
-                    "pause": 10
-                },
-                "configResetUnplugged": false,
-                "configResetBsOnPause": true,
-                "configChargeSwitch": "battery/charge_control_limit 0 battery/charge_control_limit_max",
-                "configIsAutomaticSwitchingEnabled": false,
-                "prioritizeBatteryIdleMode": false
-            }
-        },
-        "mIsChecked": true
-    },
-    {
-        "profile": {
-            "uid": 2,
-            "profileName": "Idle",
-            "accConfig": {
-                "configCapacity": {
-                    "shutdown": 5,
-                    "resume": 55,
-                    "pause": 60
-                },
-                "configVoltage": {
-                    "max": 3900
-                },
-                "configTemperature": {
-                    "coolDownTemperature": 40,
-                    "maxTemperature": 45,
-                    "pause": 90
-                },
-                "configCoolDown": {
-                    "atPercent": 60,
-                    "charge": 50,
-                    "pause": 10
-                },
-                "configResetUnplugged": false,
-                "configResetBsOnPause": true,
-                "configChargeSwitch": "battery/charge_control_limit 0 battery/charge_control_limit_max",
-                "configIsAutomaticSwitchingEnabled": false,
-                "prioritizeBatteryIdleMode": false
-            }
-        },
-        "mIsChecked": true
-    }
-]
-ACCACONF
-
-echo 'Go and import your configuration into AccA, and set schedules!'
-
+default_acc_config
 else
 echo "'Advanced Charging Controller' not found!"
-fi
-
-if type djsc &> /dev/null; then
-
-# djsc config file is stored at /data/adb/vr25/djs-data/config.txt
-rm /data/adb/vr25/djs-data/config.txt
-djsc --append "boot /system/bin/acc -n 'Don\'t forget to setup AccA profile schedules!'; : --delete"
-
-else
-echo "'Daily Job Scheduler' not found!"
 fi
