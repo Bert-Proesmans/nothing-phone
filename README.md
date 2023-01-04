@@ -178,6 +178,19 @@ Call recorder app is a payed option. Look out for in-built options..
     - Release; BSG 8.1 [BSG is the modder name]
     - Releases from BigKaka should also work
 
+- https://www.celsoazevedo.com/files/android/google-camera/f/settings09/
+    - Config files for GCam might/will unlock camera specs and improve picture performance
+    - Above link has meta information
+    - As for config file, there is a telegram group for photo enthousiasts on the Nothing Phone
+        - https://t.me/NothingPhonePhotography
+
+Yes, it's overwhelming for a beginner
+
+## Currently in use
+
+- GCAM LMC 8.4 R15 snapcam
+- LMC R14.xml (/sdcard//LMC8.4/LMC\ R14.xml)
+
 # AOSP Customizations
 
 ?? Untested
