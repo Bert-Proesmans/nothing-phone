@@ -74,7 +74,36 @@ NOTE; You'll want to prep rooting with Magisk before actually performing the unl
 - Open up Magisk app and perform direct install on top of the OTA original bootloader
     - Magisk > Install > Direct Install > Let's Go
 
+## Quicker method
+
+* Restore original boot images
+** Open Magisk
+** Press "Uninstall Magisk"
+** Press "Restore boot images"
+* Execute OTA, wait for it to ask for a reboot
+* Reinstall Magisk
+** Open Magisk
+** Press "Install"
+** Choose "Other partition slot (after OTA), DO NOT REBOOT THROUGH MAGISK
+* Reboot from OTA screen
+** Go back to OTA success screen
+** Press "Reboot"
+
+Phone will reboot from the other partition slot (a->b or b->a). You'll see the bootlog first, then the update screen.  
+Just for good measure, root again with the direct install method and verify with another reboot.
+
+* Root boot image with direct install
+** Open Magisk
+** Press "Install"
+** Choose "Direct Install"
+** Wait for finish, press "Reboot"
+
 # ROOT MODULES
+
+> NothingOS v1.5.3 has an issue with root, see https://github.com/topjohnwu/Magisk/issues/6780 
+> According to https://github.com/topjohnwu/Magisk/issues/6780#issuecomment-1493036154, running `resetprop persist.sys.mglru_enable false`
+> from a root shell will disable the new LRU system and prevent Out-of-memory (OOM) issues. The above command should survive reboots,
+> needs to be set only once.
 
 # BootloopSaver
 
