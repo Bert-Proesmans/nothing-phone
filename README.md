@@ -100,10 +100,13 @@ Just for good measure, root again with the direct install method and verify with
 
 # ROOT MODULES
 
-> NothingOS v1.5.3 has an issue with root, see https://github.com/topjohnwu/Magisk/issues/6780 
-> According to https://github.com/topjohnwu/Magisk/issues/6780#issuecomment-1493036154, running `resetprop persist.sys.mglru_enable false`
-> from a root shell will disable the new LRU system and prevent Out-of-memory (OOM) issues. The above command should survive reboots,
-> needs to be set only once.
+# OOM pressure issue
+
+NothingOS v1.5.3 has an issue with root, see https://github.com/topjohnwu/Magisk/issues/6780.  
+According to https://github.com/topjohnwu/Magisk/issues/6780#issuecomment-1493036154, running `resetprop persist.sys.mglru_enable false` from a root shell will disable the new LRU system and prevent Out-of-memory (OOM) issues.
+
+The change above _does not_ survive reboot and requires a persistent solution, aka a module.  
+Download sources here https://github.com/LukeSkyD/NP1-MGLRU-FIX/, zip them, install them through Magisk.
 
 # BootloopSaver
 
