@@ -185,7 +185,7 @@ Hide existence of magisk and other device unlocking tools/features from apps
 
 > [!NOTE]  
 > I originally added Google play services to denylist too as some guides recommended it.
-> Magisk automatically deselects the play services after reboot so I guess it's not needed ¯\_(ツ)_/¯
+> Magisk automatically deselects the play services after reboot so I guess it's not needed ¯\\\_(ツ)\_/¯
 
 | ![Magisk denylist selection](/assets/magisk%20denylist.png) | 
 |:--:| 
