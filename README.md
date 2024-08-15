@@ -366,6 +366,35 @@ So to install ReVanced Youtube, you have to install the Revanced Manager app! Th
 
 *TODO*
 
+# Personalization
+
+In general I keep my phone interfaces minimal, functionally oriented. The reason is simple; don't be terminally attached to my phone.
+
+# Lock screen
+
+No clutter; just time / date / weather, and my name at the bottom in case I lose the phone. I also added a shortcut to enable the LED flashlight because I regularly have a need for it (once every two weeks.)
+
+| ![Lock screen](/assets/lock%20screen.png) | 
+|:--:| 
+| *My lock screen (date: 2024-08-15).* |
+
+# Home screen / Launcher
+
+Also here I've chosen minimalism, using Olauncher configured to open dialer or calendar on right/left swipe. The apps I use every day get a dedicated shortcut.  
+Swiping up from the home screen opens the drawer allowing for autocomplete app search. I don't consider myself having any cruft apps installed, AKA I regularly use every installed app. However laying out all those app icons and visually searching through them quickly becomes tiresome. Typing fragments of the app I need is both more ergonomic and quicker.
+
+My autocomplete suggestion gives away that my most often opened app is Youtube; I only have to type "you" and the launcher knows I want Youtube because there is no other app with the same order of characters in its name installed. Likewise for other apps, di for *di*-scord, wh for *wh*-atsapp, op for pairdr-*op*.
+
+I have a dynamic background called [Earth & Moon 3D Wallpaper (PRO) - by CodeKonditor](https://play.google.com/store/apps/details?id=com.afkettler.pro.earth) but the app became unlisted since anywhere in 2023(?), for reasons unknown to me. The publisher tried to scrub their (almost) entire existence from the web. The app store link still works if you bought the app, in other cases you'll have to resort to APK mirror sites. There are a few seemingly interesting alternatives if you search for "earth live wallpaper", but I have no need nor intention to switch away.  
+The earth & moon wallpaper app allows me to adjust camera positions/rotations/orientations, relative star positions and distances, time of day earths rotational position. The amount of freedom is so large it is genuinely overwhelming to configure everything at first try. The app is worth it! It's also hard to communicate how good the wallpaper looks on an OLED screen. Remember, AMOLED 👏best👏 but sadly Samsung exclusive and Apple nowadays too. [RIP Oneplus X 🙏, best phone of its time!](https://bert.proesmans.eu/i-need-a-new-smartphone/)
+
+| ![Home screen](/assets/home%20screen.png) | 
+|:--:| 
+| *My home screen (date: 2024-08-15).* |
+
+| ![App drawer](/assets/app%20drawer.png) | 
+|:--:| 
+| *My app drawer (date: 2024-08-15).* |
 
 # Misc
 
