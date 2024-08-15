@@ -286,7 +286,7 @@ The balancer settings are set like this because I don't like the volume stepper 
 |:--:| 
 | *JBL Flip 4 equalize settings.* |
 
-| ![JBL Flip 4 Balancer settings](/assets/nothing%20phone%20channel%20balance%20wavelet.png) | 
+| ![JBL Flip 4 Balancer settings](/assets/jbl%20flip%20balance%20wavelet.png) | 
 |:--:| 
 | *JBL Flip 4 audio balancer settings.* |
 
