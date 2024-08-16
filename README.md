@@ -386,7 +386,7 @@ Swiping up from the home screen opens the drawer allowing for autocomplete app s
 My autocomplete suggestion gives away that my most often opened app is Youtube; I only have to type "you" and the launcher knows I want Youtube because there is no other app with the same order of characters in its name installed. Likewise for other apps, di for *di*-scord, wh for *wh*-atsapp, op for pairdr-*op*.
 
 I have a dynamic background called [Earth & Moon 3D Wallpaper (PRO) - by CodeKonditor](https://play.google.com/store/apps/details?id=com.afkettler.pro.earth) but the app became unlisted since anywhere in 2023(?), for reasons unknown to me. The publisher tried to scrub their (almost) entire existence from the web. The app store link still works if you bought the app, in other cases you'll have to resort to APK mirror sites. There are a few seemingly interesting alternatives if you search for "earth live wallpaper", but I have no need nor intention to switch away.  
-The earth & moon wallpaper app allows me to adjust camera positions/rotations/orientations, relative star positions and distances, time of day earths rotational position. The amount of freedom is so large it is genuinely overwhelming to configure everything at first try. The app is worth it! It's also hard to communicate how good the wallpaper looks on an OLED screen. Remember, AMOLED 👏best👏 but sadly Samsung exclusive and Apple nowadays too. [RIP Oneplus X 🙏, best phone of its time!](https://bert.proesmans.eu/i-need-a-new-smartphone/)
+The earth & moon wallpaper app allows me to adjust camera positions/rotations/orientations, relative star positions and distances, time of day earths rotational position. The amount of freedom is so large it is genuinely overwhelming to configure everything at first try. The app is worth it! It's also hard to communicate how good the wallpaper looks on an OLED screen.** Remember, AMOLED 👏best👏 but sadly Samsung exclusive and Apple nowadays too. [RIP Oneplus X 🙏, best phone of its time!](https://bert.proesmans.eu/i-need-a-new-smartphone/)
 
 | ![Home screen](/assets/home%20screen.png) | 
 |:--:| 
@@ -395,6 +395,8 @@ The earth & moon wallpaper app allows me to adjust camera positions/rotations/or
 | ![App drawer](/assets/app%20drawer.png) | 
 |:--:| 
 | *My app drawer (date: 2024-08-15).* |
+
+**A demo video can be [found here](/assets/demo.mp4)! Video was created with [scrcpy](https://github.com/Genymobile/scrcpy).
 
 # Misc
 
