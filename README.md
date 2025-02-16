@@ -1,5 +1,5 @@
 > [!NOTE]  
-> This README was last updated when I was running NothingOS version 2.6
+> This README was last updated when I was running NothingOS version 3.0
 
 > [!TIP]  
 > FASTBOOT NOTE; Fastboot mode can be accessed without ADB by booting with [POWER] + [VOLUME DOWN]
@@ -179,7 +179,6 @@ Hide existence of magisk and other device unlocking tools/features from apps
     - Scroll to header "Magisk"
     - Tap "Enforce Denylist"
 - Add apps to DenyList
-    
 - Reboot
 - Profit
 
@@ -194,44 +193,8 @@ Hide existence of magisk and other device unlocking tools/features from apps
 
 # Advanced Charging controller (ACC)
 
-> [!TIP]  
-> Keep the configuration of Acc simple. External battery control is flaky at best and you'll save yourself lots of headache
-
-> [!CAUTION]  
-> I have never gotten Acca to work properly, and only use it to read details on the Acca process and charging amperages once every few months.
-
-I limit both wireless charging and charging through USB with ACC. I limit charging amperages, limit maximum battery percentage, and charging cycles to keep battery cool.
-
-- https://github.com/VR-25/acc/tree/v2022.7.30-dev
-    - Do _not_ handle acc installations through the AccA app, because uninstall/reinstall doesn't properly happen 2 out of 3 times!
-
-The AccA app is sheit, use it for monitoring and nothing else.
-- https://github.com/MatteCarra/AccA/tree/v1.0.35
-    - The AccA app is a front-end for acc and the apk also holds the Magisk Module
-    - Don't install acc through AccA, it doesn't always properly work
-
-## Setup
-
-- Run the script `acc-setup.sh` in an elevated terminal
-    - `adb push '<acc-setup.sh>' /sdcard/Download`
-    - `adb shell`
-        - `su`
-        - Allow the terminal to receive root permissions
-            - Tap on "Grant" in the Magisk popup
-        - `sh /sdcard/Download/acc-setup.sh`
-    - `adb reboot`
-- 
-
-## Charging notes
-
-Acc controls both USB charging and Qi charging.
-
-- Not sure if there is kernel support (as of 2022-08-15) for "Battery Idle" mode, which bypasses the battery during charging, or not.
-    - Not officially confirmed, but
-    - The stats look kinda convincing at 0mA current.
-- Using switch battery/charge_control_limit 0 _ battery/charge_control_limit_max
-- Using forceOff
-    - Required because heat management tools would turn on usb/wireless charging coil again
+A root app for controlling battery charge is not necessary anymore starting from Nothing OS 3.0! To configure 
+the default builtin charge controller navigate the settings menu for "Custom charging mode" (Settings > Battery > Battery Health).
 
 # Termux
 
@@ -248,7 +211,7 @@ Don't need a Dolby (or any other root) mod, could use the Wavelet app from the a
 
 ## Tuning
 
-Wavelet picks its configuration depending on the active audio sync. It'll automatically switch to settings for your default speakers, bluetooth speakers, bluetooth car connection etc.
+Wavelet picks its configuration depending on the active audio sink. It'll automatically switch to settings for your default speakers, bluetooth speakers, bluetooth car connection etc.
 
 ### Default speakers
 
@@ -294,7 +257,8 @@ The balancer settings are set like this because I don't like the volume stepper 
 
 HORRIBLE AUDIO. ABSOLUTELY HORRIBLE.
 
-*TODO*
+In short; virtualise the audio to front left and EQ the bass frequencies about -6db.  
+One-time setup, not gonna copy it over here. The newer countryman (2024) has waaay better audio balance anyway.
 
 > [!NOTE]  
 > Mini cars have an option for "Harman Kardon tuned audio", providing 6(?) more tweeters and 2(?) subwoofers. The audio setup is supposedly also tuned to the car interior.
@@ -360,11 +324,21 @@ So to install ReVanced Youtube, you have to install the Revanced Manager app! Th
 
 ## Revanced Manager
 
-*TODO*
+The manager downloads patchsets for any apps, not google exclusive ones. I use it to patch the google OG Youtube app.
+
+### Preparation
+
+Go into app settings and disable the youtube application. Then use the app store button to open the store page in the app store, there you disable automated updates from the overflow menu.
+
+### Patching
+
+Inside the manager, select Patch. Look for the entry called Youtube, then click the button that mentions "recommended version". This triggered a google search for an apk of the youtube app at specified version. Pick a trustworthy apk archive website and download the apk.  
+Back in the manager, select Patch again, click Youtube and provide it the downloaded apk file. Then select all patches and GO.  
+The installation of the patched app will automatically trigger. Perform install.
 
 ## MicroG settings
 
-*TODO*
+Login 👍
 
 # Personalization
 
