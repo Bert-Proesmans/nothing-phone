@@ -1,5 +1,5 @@
 > [!NOTE]  
-> This README was last updated when I was running NothingOS version 3.0
+> This README was last updated when I was running NothingOS version 3.2
 
 > [!TIP]  
 > FASTBOOT NOTE; Fastboot mode can be accessed without ADB by booting with [POWER] + [VOLUME DOWN]
@@ -107,15 +107,17 @@ Or, from fastboot, run the command `adb flash boot original_bootloader.img`
     - Open Magisk app
     - Tap "Uninstall Magisk"
     - Tap "Restore images"
-- Start the update from the builtin updater application
-    - ! DO NOT REBOOT
+- Open the builtin updater application and start the update
+    - ! DO NOT REBOOT!
     - Go back to the Magisk app when the updater asks to reboot the phone
 - Re-root updated bootloader
     - Open Magisk app
     - Next to the "Magisk" title, tap "Install"
     - Choose "Install to inactive slot (after OTA)"
     - Tap "Let's go"
-    - Tap "Reboot" after patching completes
+    - Wait for DONE
+- Open the builtin updater application and reboot the phone 
+    - NOW you tap the button to reboot your phone
 
 
 > [!TIP]  
@@ -169,8 +171,14 @@ Hide existence of magisk and other device unlocking tools/features from apps
 ### Configuration
 
 > [!TIP]  
-> You don't need complex hooking (LSPosed lib injection + Hide my Applist function overrides) for Payconiq/Argenta/Bancontact.
-> Banking apps don't seem to care about developer mode. You might have to toggle on/off USB debugging (ADB) though.
+> You don't need complex hooking (LSPosed lib injection + Hide my Applist function overrides) for Payconiq/Argenta/Bancontact.  
+> Banking apps don't seem to care about developer mode being enabled.  
+> You might have to toggle on/off USB debugging (ADB) though.
+
+> [!CAUTION]
+> Do not believe arguments about security on the topic of locking out users with root or custom ROMs from apps.
+> The argument "banking apps don't work outside of factory software" is perpetuated through ignorance and false intentions.
+> [All the apps in this verified list](https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/#belgium) do "just work".
 
 - Open Magisk app
 - Install the Safetynet fix module
@@ -190,17 +198,13 @@ Hide existence of magisk and other device unlocking tools/features from apps
 |:--:| 
 | *The apps currently on my Magisk denylist.* |
 
+#### Hall of shame
 
-# Advanced Charging controller (ACC)
+Fuck BMW because they prevent me (rooted android user) from using their Android app (since ~june 2025). Their support mentioned "security" (aka bullshit) as their reason.  
+BMW then went on and fucks over all home-assistant users who make use of their API (since ~september 2025), this is a group of hobyists that **pay BMW to access their API**.  
+In full transparancy; sometimes the MINI app works but a couple days later is stops working, the app works again at a random moment sometime later (I stopped checking since october). This is entirely related to my smartphone being rooted and the BMW servers not caring for 20% (averaged this number over 4 months) of the time. My experience is "broken service".
 
-A root app for controlling battery charge is not necessary anymore starting from Nothing OS 3.0! To configure 
-the default builtin charge controller navigate the settings menu for "Custom charging mode" (Settings > Battery > Battery Health).
-
-# Termux
-
-Terminal emulator. DON'T DOWNLOAD THE APP STORE VERSION
-
-- https://github.com/termux/termux-app
+Fuck OpenAI because they prevent me (rooted Android user) from using their Android app (since ~august 2025). I didn't contact support for their reasoning yet.
 
 # Equalizing audio
 
@@ -264,52 +268,7 @@ One-time setup, not gonna copy it over here. The newer countryman (2024) has waa
 > Mini cars have an option for "Harman Kardon tuned audio", providing 6(?) more tweeters and 2(?) subwoofers. The audio setup is supposedly also tuned to the car interior.
 > I don't know if it works, but anything better than the default audio setup is worth it. Believe me.
 
-# Call recorder
-
-NothingOS comes with Google's dialer application, but that one has various features enabled/disabled on a per phone basis. The app GAppsMod allows to toggle settings and enable features that are otherwise not available by default.
-
-*TODO Installation instructions GAppsMod*
-
-| ![GAppsMod settings](/assets/gappsmod.png) | 
-|:--:| 
-| *Basic tuning to enable the call recorder function.* |
-
-# Camera
-
-The camera is a piece of a modern smartphone I **never** understood the hype for. But physically "taking an image" comes down to making an interpretation of the raw light data.  
-So obviously there are people with various stands on the purism spectrum. And, honestly, most out of the box camera apps produce horrible images in the average case by oversmoothing, over unsharpen, oversaturating certain hues.
-
-The AI boom has not improved the situation. As someone who appreciates the raw-ness of things, because of the sense of truth behind it, I will never understand the appeal of AI postprocessing images.
-
-## Google camera
-
-The Google camera app is exclusive to the Pixel phones, but because this is Android we can sideload (and entirely reconfigure the processing pipeline of) the app on many other phones.
-
-Admittedly I have been intrigued by what people call "the best photo processing app" for non-apple hardware and wanted to see for myself. What I did is detailed below.
-
-- https://www.celsoazevedo.com/files/android/google-camera/dev-suggested/
-    - There are multiple versions of GCAM because of device specific modifications
-    - Release; BSG 8.1 [BSG is the modder name]
-    - Releases from BigKaka should also work
-
-- https://www.celsoazevedo.com/files/android/google-camera/f/settings09/
-    - Config files for GCam might/will unlock camera specs and improve picture performance
-    - Above link has meta information
-    - As for config file, there is a telegram group for photo enthousiasts on the Nothing Phone
-        - https://t.me/NothingPhonePhotography
-
-Yes, it's overwhelming for a beginner
-
-### Currently in use
-
-- Builtin Nothing Camera
-- GCAM LMC 8.4 R15 snapcam
-    - [LMC R14.xml](./LMC%20R14.xml) (adb copy to /sdcard//LMC8.4/LMC\ R14.xml)
-
-
-> [!CAUTION]  
-> It's not possible to remap the power button to open the camera on double tick (which is my preferred way of opening the camera).
-> Because the stock camera app opens on that shortcut, I basically never use the google camera app. Making the effort of opening the custom camera app through the launcher is too much work!
+I'm driving the Mini Countryman v2024 in 2025 with the optional Harman Kardon audio pack. Can confirm it sounds 100x better at factory defaults. I've tuned and tested different EQ settings, but always reverted back to stock EQ 👌
 
 # Revanced Youtube
 
@@ -374,6 +333,27 @@ The earth & moon wallpaper app allows me to adjust camera positions/rotations/or
 
 # Misc
 
+# Call recorder
+
+NothingOS comes with Google's dialer application, but that one has various features enabled/disabled on a per phone basis.
+Call recording is disabled in Belgium, even though our privacy laws allows one-sided recording (note that valid usage of these recordings in court is a different topic), and it's not possible to force enable this feature anymore.
+
+GAppsMod doesn't work anymore, GMS-Flags doesn't work anymore.  
+GMS-Phixit flag updates do not persist and reset after 24 hours.
+
+*Gone are the days of devices serving the user*
+
+## Advanced Charging controller (ACC)
+
+A root app for controlling battery charge is not necessary anymore starting from Nothing OS 3.0! To configure 
+the default builtin charge controller navigate the settings menu for "Custom charging mode" (Settings > Battery > Battery Health).
+
+## Termux
+
+Terminal emulator. DON'T DOWNLOAD THE APP STORE VERSION
+
+- https://github.com/termux/termux-app
+
 ## OOM pressure issue
 
 > [!IMPORTANT]  
@@ -384,6 +364,43 @@ According to https://github.com/topjohnwu/Magisk/issues/6780#issuecomment-149303
 
 The change above _does not_ survive reboot and requires a persistent solution, aka a module.  
 Download sources here https://github.com/LukeSkyD/NP1-MGLRU-FIX/, zip them, install them through Magisk.
+
+## Camera
+
+The camera is a piece of a modern smartphone I **never** understood the hype for. But physically "taking an image" comes down to making an interpretation of the raw light data.  
+So obviously there are people with various stands on the purism spectrum. And, honestly, most out of the box camera apps produce horrible images in the average case by oversmoothing, over unsharpen, oversaturating certain hues.
+
+The AI boom has not improved the situation. As someone who appreciates the raw-ness of things, because of the sense of truth behind it, I will never understand the appeal of AI postprocessing images.
+
+### Google camera
+
+The Google camera app is exclusive to the Pixel phones, but because this is Android we can sideload (and entirely reconfigure the processing pipeline of) the app on many other phones.
+
+Admittedly I have been intrigued by what people call "the best photo processing app" for non-apple hardware and wanted to see for myself. What I did is detailed below.
+
+- https://www.celsoazevedo.com/files/android/google-camera/dev-suggested/
+    - There are multiple versions of GCAM because of device specific modifications
+    - Release; BSG 8.1 [BSG is the modder name]
+    - Releases from BigKaka should also work
+
+- https://www.celsoazevedo.com/files/android/google-camera/f/settings09/
+    - Config files for GCam might/will unlock camera specs and improve picture performance
+    - Above link has meta information
+    - As for config file, there is a telegram group for photo enthousiasts on the Nothing Phone
+        - https://t.me/NothingPhonePhotography
+
+Yes, it's overwhelming for a beginner
+
+#### Currently in use
+
+- Builtin Nothing Camera
+- GCAM LMC 8.4 R15 snapcam
+    - [LMC R14.xml](./LMC%20R14.xml) (adb copy to /sdcard//LMC8.4/LMC\ R14.xml)
+
+
+> [!CAUTION]  
+> It's not possible to remap the power button to open the camera on double tick (which is my preferred way of opening the camera).
+> Because the stock camera app opens on that shortcut, I basically never use the google camera app. Making the effort of opening the custom camera app through the launcher is too much work!
 
 ## Magisk Systemless hosts
 
