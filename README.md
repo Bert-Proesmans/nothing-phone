@@ -1,5 +1,7 @@
 > [!NOTE]  
-> This README was last updated when I was running NothingOS version 3.2
+> This README was last updated when I was running NothingOS version 3.2 (build 260206-1016-EEA).  
+> Software support by Nothing has ended on Android 15, security updates are expected to stop during 2026.  
+> I'm not sure what to do yet beyond the stated support period.
 
 > [!TIP]  
 > FASTBOOT NOTE; Fastboot mode can be accessed without ADB by booting with [POWER] + [VOLUME DOWN]
@@ -151,13 +153,6 @@ Installed from app store, driver activated through Magisk root.
 Installed from app store, installs a boot script through Magisk root.  
 No configuration.
 
-## BootloopSaver
-
-I needed bootloop saver about 5 times since I started rooting, and of those times it failed me 4 out of 5.  
-For me this piece of software does not do what I expect from it.
-
-- https://github.com/Magisk-Modules-Alt-Repo/HuskyDG_BootloopSaver/tree/v1.8.1
-
 ## Safety net fix + Hide root
 
 ### Requires
@@ -257,51 +252,52 @@ The balancer settings are set like this because I don't like the volume stepper 
 |:--:| 
 | *JBL Flip 4 audio balancer settings.* |
 
-### Mini countryman
+### Mini countryman 2024
 
-HORRIBLE AUDIO. ABSOLUTELY HORRIBLE.
-
-In short; virtualise the audio to front left and EQ the bass frequencies about -6db.  
-One-time setup, not gonna copy it over here. The newer countryman (2024) has waaay better audio balance anyway.
+I'm driving the Mini Countryman v2024 with the Harman Kardon option. This sounds really good at stock EQ. 👌
 
 > [!NOTE]  
-> Mini cars have an option for "Harman Kardon tuned audio", providing 6(?) more tweeters and 2(?) subwoofers. The audio setup is supposedly also tuned to the car interior.
-> I don't know if it works, but anything better than the default audio setup is worth it. Believe me.
+> I drove a Mini Countryman v2023 before and its audio was horrible. I never made a screenshot of the EQ settings, all information that is left is this "virtualise the audio to front left and EQ the bass frequencies about -6db".
 
-I'm driving the Mini Countryman v2024 in 2025 with the optional Harman Kardon audio pack. Can confirm it sounds 100x better at factory defaults. I've tuned and tested different EQ settings, but always reverted back to stock EQ 👌
+# Youtube Morphe
 
-# Revanced Youtube
+> [!WARNING]  
+> This section used to be called Revanced Youtube. A bunch of drama happened, don't know more about it, and I followed the patch developers to their fork called Morphe.
 
 The complexity of ReVanced has always put me off to try it. I'm an oldskool hacker and having to install launchers/managers/companion apps to the stuff I want is off putting! What I want is simplicity, implying I do prep work on my computer and push the resulting binary to my phone. Then all features are available automatically and intuitively!
 
 But the world isn't cool like that, not anymore. Because we make tooling that automates away helpdesk responsibilities... and big G signs their stuff and hardcodes reference inside the "stock" OS (which could be worse, don't fight me).
 
-So to install ReVanced Youtube, you have to install the Revanced Manager app! Then, just like Magisk, you provide it a Youtube apk that is patched. The patched apk is the ReVanced Youtube app you want, install that!
+So to install Youtube Morphe, you have to install the Morphe (manager) app! Then, just like Magisk, you provide it a Youtube apk that will end up patched. The patched apk is the "Youtube Morphe" app you want to sideload!
 
-> [!IMPORTANT]  
-> Once I was over the initial hurdle of process complexity, it's actually really nice to use ReVanced Youtube. It's a set and forget configuration, has intuitive features, and doesn't throw ads into my face literally every 30 seconds!
+> [!TIP]  
+> Once I got over the initial hurdle of figuring out how patching works, it's actually really nice to use Youtube Morphe. The app adds a bunch of useful UI-fixes and features, and doesn't throw ads into my face literally every 30 seconds!
 
-## Revanced Manager
+## Morphe (Manager)
 
-The manager downloads patchsets for any apps, not google exclusive ones. I use it to patch the google OG Youtube app.
+The manager downloads patchsets for many apps, not only google-produced ones. I use it to patch the google OG Youtube app.
 
 ### Preparation
 
-Go into app settings and disable the youtube application. Then use the app store button to open the store page in the app store, there you disable automated updates from the overflow menu.
+Go into the phone settings and open the listing for the (builtin) Youtube application. Tap the app store button to open the store page in Google Play (app), tap the overflow menu and tap to disable automated updates.
 
 ### Patching
 
-Inside the manager, select Patch. Look for the entry called Youtube, then click the button that mentions "recommended version". This triggered a google search for an apk of the youtube app at specified version. Pick a trustworthy apk archive website and download the apk.  
-Back in the manager, select Patch again, click Youtube and provide it the downloaded apk file. Then select all patches and GO.  
+Inside the manager, tap the entry named Youtube, then click the button that mentions "recommended version". Make the app find the correct apk-file for you, or source one manually (Pick a trustworthy apk archive website to download the apk from).    
+Go back into the manager to continue the process, select all patches and GO.  
 The installation of the patched app will automatically trigger. Perform install.
+
+The first installation of the patched application will probably require side-loading, at least it does for me (i have enhanced Google account protection enabled, which enables advanced Play protection). Updating an already installed patched app does not require side-loading.
 
 ## MicroG settings
 
-Login 👍
+Side-load the MicroG apk that fits your taste. The patched apps will make use of it automatically, the framework works dilligently in the background.
+
+Just login into your account from the Youtube Morphe app 👍
 
 # Personalization
 
-In general I keep my phone interfaces minimal, functionally oriented. The reason is simple; don't be terminally attached to my phone.
+In general I keep my phone interfaces minimal, functionally oriented. The reason is simple; try not to be terminally attached to my phone.
 
 # Lock screen
 
@@ -310,6 +306,46 @@ No clutter; just time / date / weather, and my name at the bottom in case I lose
 | ![Lock screen](/assets/lock%20screen.png) | 
 |:--:| 
 | *My lock screen (date: 2024-08-15).* |
+
+## Emergency
+
+> [!IMPORTANT]  
+> If you find my phone somewhere, and somehow found this document; Please call one of my emergency contacts to arrange pick-up.
+> I will be very grateful!
+
+I hope all Android phones have a similar emergency flow so the technology itself won't become a barrier to save someone's life!
+
+### Emergency details
+
+My phone can display details like name, emergency contacts, blood type, allergies etc. There is also a listing of the national emergency numbers should you not know which those are.
+
+To access those screens you need to press and hold the power button for 2 seconds to open the power menu, then tap "Emergency". A page with most important information for an emergency, like the national emergency telephone number, opens.
+
+| ![Power menu](/assets/nothing%20phone%20emergency%20button.png) | 
+|:--:| 
+| *Power menu showing the emergency button in red* |
+
+To call the national emergency number (112 in my case), swipe the first red button to the right.
+
+| ![Emergency information page](/assets/nothing%20phone%20emergency%20screen.png) | 
+|:--:| 
+| *Emergency information page* |
+
+To read my personal emergency informatin, swipe the blue button to the right.
+
+| ![Personal emergency information](/assets/bert%20emergency%20information.png) | 
+|:--:| 
+| *My personal emergency information* |
+
+
+### Emergency during incapacitation
+
+My phone is also configured to call the emergency number automatically after pressing the power button 5 times in a row. This is useful to quickly skip all the manual steps and _just do the thing_.
+
+| ![Emergency call shortcut](/assets/nothing%20phone%20incapacitated%20emergency.png) | 
+|:--:| 
+| *Emergency call screen after pressing the power button 5 times in short succession* |
+
 
 # Home screen / Launcher
 
@@ -419,3 +455,10 @@ Too simplistic, I rather have the features of Wavelet.
 
 ?? Untested
 - https://github.com/siavash79/AOSPMods/tree/v1.3.2
+
+## Magisk BootloopSaver
+
+I needed bootloop saver about 5 times since I started rooting, and of those times it failed me 4 out of 5.  
+For me this piece of software does not do what I expect from it, and am not using it anymore.
+
+- https://github.com/Magisk-Modules-Alt-Repo/HuskyDG_BootloopSaver/tree/v1.8.1
